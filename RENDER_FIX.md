@@ -2,40 +2,68 @@
 
 ## ❌ Xato: Python 3.13 Compatibility
 
-### Muammo:
+### Muammo 1: python-telegram-bot
 ```
 AttributeError: 'Updater' object has no attribute '_Updater__polling_cleanup_cb'
 ```
 
+### Muammo 2: Groq
+```
+TypeError: Client.__init__() got an unexpected keyword argument 'proxies'
+```
+
 ### Sabab:
-Render Python 3.13 ishlatmoqda, lekin python-telegram-bot 20.7 Python 3.13 bilan to'liq mos emas.
+Render Python 3.13 ishlatmoqda, lekin:
+- python-telegram-bot 20.7 Python 3.13 bilan mos emas
+- groq 0.4.2 Python 3.13 bilan mos emas
 
 ### ✅ Yechim:
 
-**1. Python versiyasini 3.11 ga o'zgartirish**
+**1. Python versiyasini majburiy 3.11.9 qilish**
+
+`.python-version` fayli yarating:
+```
+3.11.9
+```
 
 `runtime.txt` faylida:
 ```
 python-3.11.0
 ```
 
-**2. python-telegram-bot versiyasini yangilash**
+**2. Kutubxonalarni yangilash**
 
 `requirements.txt` faylida:
 ```
 python-telegram-bot==21.0.1
-groq==0.4.2
+groq==0.11.0
 python-dotenv==1.0.0
+httpx==0.27.0
 ```
 
-**3. GitHub'ga push qilish**
+**3. render.yaml ni yangilash**
+
+```yaml
+services:
+  - type: worker
+    name: kun-tartibi-bot
+    runtime: python
+    plan: free
+    buildCommand: |
+      python --version
+      pip install --upgrade pip
+      pip install -r requirements.txt
+    startCommand: python bot.py
+```
+
+**4. GitHub'ga push qilish**
 ```bash
-git add requirements.txt runtime.txt
-git commit -m "Fix: Python version compatibility"
+git add .python-version requirements.txt runtime.txt render.yaml
+git commit -m "Fix: Force Python 3.11.9 compatibility"
 git push
 ```
 
-Render avtomatik ravishda qayta deploy qiladi.
+Render avtomatik ravishda qayta deploy qiladi va Python 3.11.9 ishlatadi.
 
 ## 🔍 Boshqa Keng Tarqalgan Xatolar
 
@@ -157,6 +185,10 @@ Agar muammo hal bo'lmasa:
 - ✅ 21.0.1 (eng yangi, tavsiya)
 - ✅ 20.7 (Python 3.11 bilan)
 - ❌ 20.7 (Python 3.13 bilan muammo)
+
+### Groq Versiyalari:
+- ✅ 0.11.0 (eng yangi, Python 3.11+ uchun)
+- ⚠️ 0.4.2 (Python 3.13 bilan muammo)
 
 ---
 
