@@ -1,0 +1,23 @@
+# fly.toml app configuration file
+app = "telegram-productivity-bot"
+primary_region = "fra"
+
+[build]
+
+[env]
+  PORT = "8080"
+
+[processes]
+  app = "python bot.py"
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 8080
+
+  [[services.ports]]
+    port = 80
+    handlers = ["http"]
+
+  [[services.ports]]
+    port = 443
+    handlers = ["tls", "http"]

@@ -1,0 +1,44 @@
+{
+  "default_categories": {
+    "1": {
+      "name": "Uy va shaxsiy",
+      "emoji": "1️⃣",
+      "keywords": ["wash", "clean", "breakfast", "lunch", "dinner", "eat", "dressed", "personal", "chores", "yuvish", "tozalash", "ovqat", "kiyinish"]
+    },
+    "2": {
+      "name": "Ta'lim va o'qish",
+      "emoji": "2️⃣",
+      "keywords": ["study", "learn", "read", "lesson", "school", "homework", "practice", "o'qish", "dars", "maktab", "mashq"]
+    },
+    "3": {
+      "name": "Ish va biznes",
+      "emoji": "3️⃣",
+      "keywords": ["work", "business", "meeting", "project", "ish", "biznes", "loyiha"]
+    },
+    "4": {
+      "name": "Sport va salomatlik",
+      "emoji": "4️⃣",
+      "keywords": ["sport", "exercise", "gym", "workout", "health", "mashq", "salomatlik"]
+    },
+    "5": {
+      "name": "Dam olish",
+      "emoji": "5️⃣",
+      "keywords": ["rest", "break", "relax", "sleep", "dam", "tanaffus", "uxlash"]
+    },
+    "6": {
+      "name": "Transport",
+      "emoji": "6️⃣",
+      "keywords": ["go to", "go home", "transport", "travel", "borish", "qaytish"]
+    },
+    "7": {
+      "name": "Ijtimoiy",
+      "emoji": "7️⃣",
+      "keywords": ["friend", "family", "social", "help", "do'st", "oila", "yordam"]
+    },
+    "8": {
+      "name": "Kontent",
+      "emoji": "8️⃣",
+      "keywords": ["content", "video", "photo", "design", "create", "kontent", "yaratish"]
+    }
+  }
+}
